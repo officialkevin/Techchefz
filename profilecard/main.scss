@@ -1,0 +1,193 @@
+
+
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin widthheight($width,$height) {
+    width: $width;
+    height: $height;
+};
+
+.maincontainer{
+    
+    @include widthheight(undefined,100vh );
+    @include flex-center()
+}
+
+.details{
+    @include flex-center();
+    box-shadow: 0px 4px 13px 10px rgba(0, 0, 0, 0.25);
+    @include widthheight(691px,548px );
+    background: #FFFFFF;
+    border-radius: 30px;
+}
+
+
+.profilepic{   
+    @include widthheight(287px,287px );
+    border-radius: 50%;
+    border: 10px solid #F1EAEA;
+    position: relative;
+    left: 30%;
+    top: 20%;
+}
+
+
+
+.outercard{
+    @include flex-center();
+    @include widthheight(1000px,1150px );
+    background-color:#16A784;
+    border-radius: 30px;
+}
+.card{
+    background-image: url(https://s3-alpha-sig.figma.com/img/e022/c2b0/4569612ef636f48994a9013d4202467e?Expires=1668988800&Signature=KW-xJkYwPBWyx1TqMGnmyieicE6aLC-8Z1MBzY8TWP~KzpG14jxM4gKmsPThlba54EB5KXSWiK6s0EVdioYSHJcAbj2~O06qIoiq~ao9PO0lDOIVvSANodiwdJIQWZFKFDn0Zyq-85L9ZOv3eMIWZc-HSC6RdF5CqDEJZFhsy5Rx6ibkzBgWwWQCLAJdjr~-3wkp3DoChvTdHiBqgWMgx~zwPWHmvoeZIiFcHvLay8CP65TDrvtsK1nvylqDFc-cPQCw4miH~jMYwdHNiSN04otsRDK59o524AwB7r0HptoBXnvh-yv3r4MXM-LGlSF3RhqliYRVcyeJHU9XB1lsOQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA);
+
+    background-size: cover;
+@include widthheight(691px,825px );
+box-shadow: 0px 4px 13px 10px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+
+}
+
+
+
+.details  p,h1,h2{
+       text-align: center;
+}
+
+.details p{
+    @include widthheight(300px,undefined );
+    line-height: 20px;
+    font-weight: 900;
+}
+.details h1{
+    line-height:72px;
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+color: #16A784;
+stroke-width: 2px #16A784;
+font: bolder;
+}
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+
+
+/* media queries */
+
+@media only screen and (max-width:800px) {
+  
+    
+    .outercard{
+        height: 500px;
+        width: 550px;
+        /* background-color: red; */
+       
+    }
+ .card{
+        width: 345.5px;
+        height: 412.5px;
+    }
+.details{
+    width: 345px;
+    height: 258px;
+}
+.profilepic{   
+    width: 143.5px;
+    height: 143.5px;
+    border: 5px solid #F1EAEA;
+}
+.details p{
+    width: 200px;
+    line-height: 15px;
+    font-weight: 900;
+    font-size: 15px;
+
+}
+
+.details h1{
+    line-height:36px;
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 900;
+font-size: 20px;
+}
+
+.details h2{
+    font-size: 
+    10px;
+}
+
+
+
+}
+
+ 
+@media only screen and (max-width:400px) {
+  
+    
+    .outercard{
+        height: 250px;
+        width: 275px;
+        /* background-color: red; */
+       
+    }
+    .card{
+        width: 172px;
+        height: 206px;
+    }
+.details{
+    width: 172px;
+    height: 129px;
+}
+.profilepic{   
+    width: 71.5px;
+    height: 71.5px;
+    border: 3px solid #F1EAEA;
+}
+
+
+.details p{
+    width: 100px;
+    line-height: 7.5px;
+    font-weight: 900;
+    font-size: 7.5px;
+
+}
+
+.details h1{
+    line-height:18px;
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 900;
+font-size: 10px;
+}
+
+.details h2{
+    font-size: 
+    5px;
+}
+
+
+
+} 
+
+
+
+
+
+
