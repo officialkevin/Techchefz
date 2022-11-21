@@ -1,193 +1,260 @@
-
-
-
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", sans-serif;
 }
 
-@mixin widthheight($width,$height) {
-    width: $width;
-    height: $height;
-};
-
-.maincontainer{
-    
-    @include widthheight(undefined,100vh );
-    @include flex-center()
+@mixin flex-center($display, $justify-content, $align-items) {
+  display: $display;
+  justify-content: $justify-content;
+  align-items: $align-items;
 }
 
-.details{
-    @include flex-center();
-    box-shadow: 0px 4px 13px 10px rgba(0, 0, 0, 0.25);
-    @include widthheight(691px,548px );
-    background: #FFFFFF;
+@mixin widthheight($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+.maincontainer {
+  @include widthheight(undefined, 100vh);
+  @include flex-center(flex, center, center);
+  .outercard {
+    @include flex-center(flex, center, center);
+    @include widthheight(1000px, 1150px);
+    background-color: #16a784;
     border-radius: 30px;
-}
+  }
 
-
-.profilepic{   
-    @include widthheight(287px,287px );
-    border-radius: 50%;
-    border: 10px solid #F1EAEA;
-    position: relative;
-    left: 30%;
-    top: 20%;
-}
-
-
-
-.outercard{
-    @include flex-center();
-    @include widthheight(1000px,1150px );
-    background-color:#16A784;
-    border-radius: 30px;
-}
-.card{
+  .card {
     background-image: url(https://s3-alpha-sig.figma.com/img/e022/c2b0/4569612ef636f48994a9013d4202467e?Expires=1668988800&Signature=KW-xJkYwPBWyx1TqMGnmyieicE6aLC-8Z1MBzY8TWP~KzpG14jxM4gKmsPThlba54EB5KXSWiK6s0EVdioYSHJcAbj2~O06qIoiq~ao9PO0lDOIVvSANodiwdJIQWZFKFDn0Zyq-85L9ZOv3eMIWZc-HSC6RdF5CqDEJZFhsy5Rx6ibkzBgWwWQCLAJdjr~-3wkp3DoChvTdHiBqgWMgx~zwPWHmvoeZIiFcHvLay8CP65TDrvtsK1nvylqDFc-cPQCw4miH~jMYwdHNiSN04otsRDK59o524AwB7r0HptoBXnvh-yv3r4MXM-LGlSF3RhqliYRVcyeJHU9XB1lsOQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA);
-
     background-size: cover;
-@include widthheight(691px,825px );
-box-shadow: 0px 4px 13px 10px rgba(0, 0, 0, 0.25);
-border-radius: 30px;
+    @include widthheight(691px, 825px);
+    box-shadow: 0px 4px 13px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
 
+    .profilepicdiv {
+      background-image: url("https://s3-alpha-sig.figma.com/img/ae0f/41c4/14089269e7fb5f25d737d328c17073fe?Expires=1668988800&Signature=A0HsEAwOtqiXSd2FHaKNP7Ks1bsDIBT32eM7MPd-GSV6JXIPKsux1JCB2zFHjP4zmGJs6cOpPgNxhY7MeArvcV7JRxSt27xrwFsygx8K2wA4DzGKUysp6-diKi~TSgDizWH4JjKLhrNYczmK1sxLLJqO2FCOAcPyViwakEdkUwqyMZxmjJ1GQ~DRCDYHYBj98hyTa6NPs1WoH5-irhZdcxhsUAnL2dIT8uhhTcfQl3TRjZ3vYZp72TfvACNAQ6qzMVk6jQi597Tzvc0odi~kJpFwdKw7yUBS2aZjfxqhpMF~KuAmfvlV91sHR45bQI2~DJYwH0aO1XU38BdXmm65Uw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+      background-size: cover;
+      background-position: left 0px top -60px;
+      background-repeat: no-repeat;
+      @include widthheight(287px, 287px);
+      border-radius: 50%;
+      border: 10px solid #f1eaea;
+      position: relative;
+      left: 30%;
+      top: 20%;
+    }
+
+    .details {
+      @include flex-center(flex, center, center);
+      box-shadow: 0px 4px 13px 10px rgba(0, 0, 0, 0.25);
+      @include widthheight(691px, 548px);
+      background: #ffffff;
+      border-radius: 30px;
+
+      .sub {
+        border-top: 100px solid white;
+        .palign {
+          @include flex-center(flex, center, undefined);
+          line-height: 10px;
+        }
+        .lines {
+            @include flex-center(flex, space-between, undefined);
+            .line {
+              border: 1px solid rgba(22, 167, 132, 0.4);
+              width: 180px;
+              margin: 30px;
+            }
+          }
+
+
+
+      }
+      .prime {
+        text-align: center;
+        line-height: 72px;
+        font-style: normal;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 48px;
+        color: #16a784;
+      }
+
+      p {
+        text-align: center;
+        @include widthheight(426px, undefined);
+        line-height: 36px;
+        font-weight: 400;
+        font-size: 24px;
+        // line-height: 36px;
+      }
+
+      #product {
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 500;
+        @include widthheight(320px, 45px);
+        line-height: 45px;
+      }
+
+      .product {
+        @include flex-center(flex, center, center);
+      }
+    }
+  }
 }
 
 
 
-.details  p,h1,h2{
-       text-align: center;
-}
-
-.details p{
-    @include widthheight(300px,undefined );
-    line-height: 20px;
-    font-weight: 900;
-}
-.details h1{
-    line-height:72px;
-font-style: normal;
-font-weight: 900;
-font-size: 48px;
-color: #16A784;
-stroke-width: 2px #16A784;
-font: bolder;
-}
-
-
-
-*{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Poppins', sans-serif;
-
-}
 
 
 
 
-/* media queries */
 
-@media only screen and (max-width:800px) {
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// /* media queries */
+
+@media only screen and (max-width: 800px) {
+
+    .maincontainer {
+        .outercard {
+          @include widthheight(500px, 575px);
+         border-radius: 15px;
+        }
+      
+        .card {
+          @include widthheight(345.5px, 412.5px);
+          border-radius: 15px;
+      
+          .profilepicdiv {
+           background-position: left 0px top -30px;
+            @include widthheight(143.5px, 143.5px);
+            border-radius: 50%;
+            border: 5px solid #f1eaea;
+          }
+      
+          .details {
+            @include widthheight(345.5px, 274px);
+            border-radius:15px;
+      
+            .sub {
+              border-top: 50px solid white;
+              .palign {
+                line-height: 5px;
+              }
+              .lines {
+                  .line {
+                    width: 90px;
+                    margin: 15px;
+                  }
+                }
+            }
+
+            .prime {
+        
+              line-height: 36px;
+              font-size: 24px;
+              color: #16a784;
+            }
+      
+            p {
+
+              @include widthheight(213px, undefined);
+              line-height: 18px;
+              font-size: 12px;
+        
+            }
+      
+            #product {
+              font-size: 15px;
+              @include widthheight(160px, 22.5px);
+              line-height: 22.5px;
+            }
+      
+            
+          }
+        }
+      }
+
     
-    .outercard{
-        height: 500px;
-        width: 550px;
-        /* background-color: red; */
-       
-    }
- .card{
-        width: 345.5px;
-        height: 412.5px;
-    }
-.details{
-    width: 345px;
-    height: 258px;
-}
-.profilepic{   
-    width: 143.5px;
-    height: 143.5px;
-    border: 5px solid #F1EAEA;
-}
-.details p{
-    width: 200px;
-    line-height: 15px;
-    font-weight: 900;
-    font-size: 15px;
-
-}
-
-.details h1{
-    line-height:36px;
-    font-family: 'Poppins';
-font-style: normal;
-font-weight: 900;
-font-size: 20px;
-}
-
-.details h2{
-    font-size: 
-    10px;
 }
 
 
 
-}
 
- 
+
 @media only screen and (max-width:400px) {
-  
-    
-    .outercard{
-        height: 250px;
-        width: 275px;
-        /* background-color: red; */
-       
-    }
-    .card{
-        width: 172px;
-        height: 206px;
-    }
-.details{
-    width: 172px;
-    height: 129px;
+
+    .maincontainer {
+        .outercard {
+          @include widthheight(250px, 287.5px);
+         border-radius: 7.5px;
+        }
+      
+        .card {
+          @include widthheight(172.75px, 206px);
+          border-radius: 7.5px;
+      
+          .profilepicdiv {
+           background-position: left 0px top -15px;
+            @include widthheight(71.75px, 71.75px);
+            border-radius: 50%;
+            border: 2.5px solid #f1eaea;
+          }
+      
+          .details {
+            @include widthheight(172.75px, 137px);
+            border-radius:7.5px;
+      
+            .sub {
+              border-top: 25px solid white;
+              .palign {
+                line-height: 2.5px;
+              }
+              .lines {
+                  .line {
+                    width: 45px;
+                    margin: 7.5px;
+                  }
+                }
+            }
+
+            .prime {
+        
+              line-height: 18px;
+              font-size: 12px;
+              color: #16a784;
+            }
+      
+            p {
+
+              @include widthheight(106.5px, undefined);
+              line-height: 9px;
+              font-size: 6px;
+        
+            }
+      
+            #product {
+              font-size: 7.5px;
+              @include widthheight(80px, 11.25px);
+              line-height: 11.25px;
+            }
+      
+            
+          }
+        }
+      }
 }
-.profilepic{   
-    width: 71.5px;
-    height: 71.5px;
-    border: 3px solid #F1EAEA;
-}
-
-
-.details p{
-    width: 100px;
-    line-height: 7.5px;
-    font-weight: 900;
-    font-size: 7.5px;
-
-}
-
-.details h1{
-    line-height:18px;
-    font-family: 'Poppins';
-font-style: normal;
-font-weight: 900;
-font-size: 10px;
-}
-
-.details h2{
-    font-size: 
-    5px;
-}
-
-
-
-} 
-
-
-
-
-
-
